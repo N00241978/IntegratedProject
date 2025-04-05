@@ -62,14 +62,12 @@ try { // $stories=Story::findAll(); //
 </head>
 
 <body>
-    <!--<?php require_once "./etc/navbar.php"; ?>-->
+    <?php require_once "./etc/navbar.php"; ?>
 
-    <!-- <div class="width-12 mainTitle">
-        <h1>HOME PAGE TEST LAYOUT</h1>
-    </div> -->
+    <div class="width-12 mainTitle1">
+        <h1>INTEGRATED</h1>
+    </div>
     <div class="width-12 container">
-        <!-- Sub Contianer -->
-
         <!-- Small Story List -->
         <div class="width-4 sidePanel">
             <div class="width-4 panelTitle">
