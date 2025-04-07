@@ -154,7 +154,7 @@ try { // $stories=Story::findAll(); //
             </div>
         </div>
     </div>
-    <div class="container">
+    <!-- <div class="container">
         <div class="width-12">
             <?php foreach ($stories3 as $s) { ?>
                 <div class="width-4 mediums1">
@@ -178,7 +178,7 @@ try { // $stories=Story::findAll(); //
                 <?php } ?>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>

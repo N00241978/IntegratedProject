@@ -40,7 +40,6 @@ try {
         <!-- Medium Stories -->
         <?php foreach ($stories as $s) { ?>
             <div class="width-3 mediumStory">
-                <div class="rectangle"></div>
                 <div class="content">
                     <div class="text">
                         <h4><?= Category::findById($s->category_id)->name ?></h4>

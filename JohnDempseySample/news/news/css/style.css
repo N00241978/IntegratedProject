@@ -90,6 +90,7 @@ body {
 
 .navbar {
     background-color: #ffffff;
+    padding-top: 8px;
 }
 
 .navbar ul {
@@ -97,6 +98,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex; 
+    padding-bottom: 5px;
+    border-bottom: 3px solid rgb(230, 230, 230);
 }
 
 .navbar li {
@@ -363,6 +366,7 @@ body {
     padding-top: 10px;
     color: gray;
     font-size: 12px;
+    margin-top: auto;
 }
 
 .container .mediumStories .mediumStory2 .content .text h4 {
