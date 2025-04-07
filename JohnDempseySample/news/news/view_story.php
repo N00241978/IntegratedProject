@@ -27,10 +27,12 @@ try {
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style_view_story.css" />
+    <link rel="stylesheet" href="css/my_designs.css" />
+    <link rel="stylesheet" href="css/category.css" />
 </head>
 
 <body>
-    <!-- <?php require_once "./etc/navbar.php"; ?> -->
+    <?php require_once "./etc/navbar.php"; ?>
     <?php require_once "./etc/flash_message.php"; ?>
     <div class="container">
         <div class="width-8 viewingStory">

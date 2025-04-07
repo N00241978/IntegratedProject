@@ -8,10 +8,13 @@ try {
 }
 ?>
 <div class="width-12 navbar">
-    <li><a href="index.php">Home</a></li>
-    <?php foreach ($categories as $c) { ?>
-        <div class="navBar">
-            <a href="category.php?id=<?= $c->id ?>"><?= $c->name ?></a>
-        </div>
-    <?php } ?>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <?php foreach ($categories as $c) { ?>
+            <li><a href="category.php?id=<?= $c->id ?>"><?= $c->name ?></a></li>
+        <?php } ?>
+    </ul>
+    <div class="width-12 navbarBottom">
+
+    </div>
 </div>

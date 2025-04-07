@@ -1,0 +1,139 @@
+.container .catTitle {
+    text-transform: uppercase;
+    display: flex;
+}
+
+.container .catTitle .catRectangle {
+    background-color: #EA0151;
+    width: 5px;
+    margin-right: 3px;
+}
+
+.container .catMedium .mediumStory .content .text img {
+    width: 40%;
+    height: 30%;
+}   
+
+.container .catGrid {
+    display: flex;
+}
+
+/* Medium Story */
+
+.container .mediumStory {
+    margin-right: 20px;
+}
+
+.container .catGrid .mediumStories {
+    display: flex;
+}
+
+.container .mediumStories .mediumStory img {
+    object-position: center top;
+    object-fit: cover;
+ }
+
+ .container .mediumStories .mediumStory .rectangle {
+    width: 15px;
+    background-color: #EA0151;
+    margin-right: 10px;
+}
+
+.container .mediumStories .mediumStory {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+.container .mediumStories .mediumStory .content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container .mediumStories .mediumStory .content .auther_date{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: end;
+    font-weight: 500;
+    gap: 5px;
+    padding-top: 10px;
+    color: gray;
+    font-size: 12px;
+}
+
+.container .mediumStories .mediumStory .content .text h4 {
+    color:#EA0151;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2;
+}
+
+.container .mediumStories .mediumStory .content .text h3 {
+    padding-top: 10px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.container .mediumStories .mediumStory .content .text p {
+    padding-bottom: 4px;
+}
+
+.container .mediumStories .mediumStory2 img {
+    object-position: center top;
+    object-fit: cover;
+    aspect-ratio: 3/2; 
+ }
+
+ .container .mediumStories .mediumStory2 .rectangle {
+    width: 20px;
+    background-color: #EA0151;
+    margin-right: 10px;
+    margin-left: 8px;
+}
+
+.container .mediumStories .mediumStory2 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+.container .mediumStories .mediumStory2 .content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container .mediumStories .mediumStory2 .content .auther_date{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: end;
+    font-weight: 500;
+    gap: 5px;
+    padding-top: 10px;
+    color: gray;
+    font-size: 12px;
+}
+
+.container .mediumStories .mediumStory2 .content .text h4 {
+    color:#EA0151;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2;
+}
+
+.container .mediumStories .mediumStor2y .content .text h3 {
+    padding-top: 10px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.container .mediumStories .mediumStory2 .content .text p {
+    padding-bottom: 4px;
+}
+
+
+.container .subContainer {
+    display: flex;
+    flex-direction: row;
+}

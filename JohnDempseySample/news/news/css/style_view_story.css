@@ -1,3 +1,67 @@
-.body {
-    background-color: white;
+/* View Story */
+
+
+.container .viewingStory h1{
+    text-transform: uppercase;
+}
+
+.container .viewingStory .viewingImg{
+    display: flex;
+    justify-content: center;
+}
+
+.container .viewingStory .viewingImg img{
+    width: 40%;
+    height: 30%;
+}
+
+.container .viewingStory .titleBox .titleJunk h3 {
+    color:#EA0151;
+    text-transform: uppercase;
+}
+
+.container .viewingStory .viewingContent h4 {
+    font-weight: 400;
+    font-size: 20;
+    text-transform: uppercase;
+}
+
+.container .viewingStory .titleBox {
+    display: flex;
+}
+
+.container .viewingStory .titleBox .titleRectangle {
+    width:10px;
+    background-color: #EA0151;
+    margin-right: 5px;;
+}
+
+.container .viewingStory .viewingContent p {
+    margin-bottom: 20px;
+    font-size: 17;
+}
+
+/* Related stories side panel */
+
+.container .relatedStories .relatedTitle {
+    display:flex;
+    margin-bottom: 10px;
+}
+
+.container .relatedStories .relatedTitle .rectangleVert {
+    width:5px;
+    background-color: #EA0151;
+    margin-right: 5px;;
+}
+
+.container .relatedStories .smallStory img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.container .relatedStories .smallStory {
+    display:flex;
+    margin-bottom: 10px;
 }

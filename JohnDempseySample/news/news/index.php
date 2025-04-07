@@ -57,15 +57,29 @@ try { // $stories=Story::findAll(); //
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style_view_story.css" />
+    <link rel="stylesheet" href="css/my_designs.css" />
 
 
 </head>
 
 <body>
-    <?php require_once "./etc/navbar.php"; ?>
+    <div class="width-12 navbar">
+        <?php require_once "./etc/navbar.php"; ?>
+    </div>
 
     <div class="width-12 mainTitle1">
-        <h1>INTEGRATED</h1>
+        <div class="temp">
+            <div class="theInt">
+                <h1>THE</h1>
+            </div>
+            <div class="intInt">
+                <h2>INT</h2>
+                <h1>EGRATED</h1>
+            </div>
+            <div class="proInt">
+                <h1>PROJECT</h1>
+            </div>
+        </div>
     </div>
     <div class="width-12 container">
         <!-- Small Story List -->
@@ -114,6 +128,7 @@ try { // $stories=Story::findAll(); //
                     </div>
                 </div>
             <?php } ?>
+            <!-- Medium -->
             <div class="width-8">
                 <?php foreach ($stories as $s) { ?>
                     <div class="width-4 mediums1">
@@ -139,6 +154,30 @@ try { // $stories=Story::findAll(); //
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="width-12">
+            <?php foreach ($stories3 as $s) { ?>
+                <div class="width-4 mediums1">
+                    <div class="width-6 mediumStory">
+                        <div class="rectangle"></div>
+                        <div class="content">
+                            <div class="text">
+                                <h4><?= Category::findById($s->category_id)->name ?></h4>
+                                <img src="<?= $s->img_url ?>" />
+                                <h3><a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a></h3>
+                                <p><?= substr($s->article, 0, 90) ?>...</p>
+                            </div>
+                            <div class="auther_date">
+                                <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?>
+                                </p>
+                                <p>|</p>
+                                <p><?= $s->created_at ?></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
     </div>
 </body>
 
