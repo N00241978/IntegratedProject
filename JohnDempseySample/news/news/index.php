@@ -82,10 +82,6 @@ try { // $stories=Story::findAll(); //
         </div>
     </div>
 
-    <div class="width-12 navbar">
-        <?php require_once "./etc/navbar2.php"; ?>
-    </div>
-
     <div class="width-12 container">
         <!-- Small Story List -->
         <div class="width-4 sidePanel">
@@ -158,6 +154,9 @@ try { // $stories=Story::findAll(); //
                 </div>
             </div>
         </div>
+    </div>
+    <div class="width-12 navbar2">
+        <?php require_once "./etc/navbar2.php"; ?>
     </div>
 </body>
 

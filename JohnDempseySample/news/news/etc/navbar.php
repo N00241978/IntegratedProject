@@ -13,7 +13,6 @@ try {
         <?php foreach ($categories as $c) { ?>
             <li><a href="category.php?id=<?= $c->id ?>"><?= $c->name ?></a></li>
         <?php } ?>
-        <li><a href="AuthorEdit">Edit</a></li>
     </ul>
 
     <div class="width-12 navbarBottom">
