@@ -1,6 +1,7 @@
 <?php
 require_once "../etc/config.php";
 require_once "../etc/global.php";
+require_once "../AuthorEdit/authorValidator.php";
 
 try {
     if ($_SERVER["REQUEST_METHOD"] !== "POST") {

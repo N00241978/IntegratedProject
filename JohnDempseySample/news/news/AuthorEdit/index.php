@@ -17,40 +17,43 @@ $authors = Author::findAll();
 </head>
 
 <body>
-    <a href="employeeForm.php">Edit Article</a>
-    <table border=2>
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>first name</th>
-                <th>last name</th>
-        </thead>
-        <tbody>
-            <?php foreach ($authors as $author) { ?>
-
+    <div class="container">
+        <!-- <a href="AuthorForm.php">Edit Author</a> -->
+        <a href="index.php"><h1>Home</h1></a>
+        <table border=2>
+            <thead>
                 <tr>
-                    <td><?= $author->id ?></td>
-                    <td><?= $author->first_name ?></td>
-                    <td><?= $author->last_name ?></td>
-                    <td style="disaply: flex">
-                        <form method="POST" action="./deleteAuthor.php">
-                            <input type="hidden" value="<?= $author->id ?>" name="delete-id">
-                            <input type="submit" value="delete">
-                        </form>
-                    </td>
-                    <td>
-                        <form method="POST" action="./editAuthor.php">
-                            <input type="hidden" value="<?= $author->id ?>" name="edit-id">
-                            <input type="submit" value="edit">
-                        </form>
-                    </td>
-                </tr>
+                    <th>id</th>
+                    <th>first name</th>
+                    <th>last name</th>
+            </thead>
+            <tbody>
+                <?php foreach ($authors as $author) { ?>
 
-            <?php } ?>
+                    <tr>
+                        <td><?= $author->id ?></td>
+                        <td><?= $author->first_name ?></td>
+                        <td><?= $author->last_name ?></td>
+                        <td style="disaply: flex">
+                            <form method="POST" action="./deleteAuthor.php">
+                                <input type="hidden" value="<?= $author->id ?>" name="delete-id">
+                                <input type="submit" value="delete">
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="./editAuthor.php">
+                                <input type="hidden" value="<?= $author->id ?>" name="edit-id">
+                                <input type="submit" value="edit">
+                            </form>
+                        </td>
+                    </tr>
+
+                <?php } ?>
 
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>

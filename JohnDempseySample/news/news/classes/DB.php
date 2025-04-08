@@ -16,9 +16,15 @@ class DB {
 
     public function open() {
         if ($this->conn === null) {
-            $this->conn = new PDO($this->dsn, $this->username,$this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->conn->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
+            try {
+                $this->conn = new PDO($this->dsn, $this->username, $this->password);
+                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            } catch (PDOException $e) {
+                
+                echo "Connection failed: " . $e->getMessage();
+                exit(); 
+            }
         }
     }
 

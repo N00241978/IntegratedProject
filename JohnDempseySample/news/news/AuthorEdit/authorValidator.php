@@ -1,42 +1,46 @@
 <?php
-class AuthorValidator extends FormValidator
+class AuthorValidator
 {
-    public function __construct($data = [])
+    protected $data;
+    protected $errors = [];
+
+    public function __construct($data)
     {
-        parent::__construct($data);
+        $this->data = $data;
     }
 
+    // Check if the field is present
+    public function isPresent($field)
+    {
+        return !empty($this->data[$field]);
+    }
+
+    // Check if the field meets the minimum length
+    public function minLength($field, $min)
+    {
+        return strlen($this->data[$field]) >= $min;
+    }
+
+    // Validate the form
     public function validate()
     {
+        // Example of validation logic
         if (!$this->minLength("first_name", 6)) {
-            $this->errors["name"] = "Please enter a name with at least 6 characters";
+            $this->errors["first_name"] = "Please enter a first name with at least 6 characters";
         }
 
         if (!$this->isPresent("last_name")) {
-            $this->errors["ppsn"] = "Please enter your ppsn";
+            $this->errors["last_name"] = "Please enter your last name";
         }
 
-        $departments = Department::findAll();
-
-        echo "<pre>";
-
-        print_r($departments);
-        print_r($this->data);
-
-        echo "</pre>";
-
-        $valid = false;
-        foreach ($departments as $department) {
-            if ($department->id == $this->data["department_id"]) {
-                $valid = true;
-            }
-        }
-
-        if ($valid == false) {
-            $this->errors["department_id"] = "Please enter a department_id";
-        }
-
+        // If any errors were added, return false
         return count($this->errors) === 0;
+    }
+
+    // Get all validation errors
+    public function errors()
+    {
+        return $this->errors;
     }
 }
 ?>

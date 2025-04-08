@@ -21,46 +21,49 @@ class Author {
             $db = new DB();
             $db->open();
             $conn = $db->getConnection();
-        
+    
             $params = [
                 ":first_name" => $this->first_name,
                 ":last_name"  => $this->last_name
             ];
-
+    
             if ($this->id === null) {
+                echo "Inserting author...<br>";  // Debugging 
                 $sql = "INSERT INTO authors (first_name, last_name) VALUES (:first_name, :last_name)";
-            }
-            else {
-                $sql = "UPDATE authors SET " .
-                       "first_name = :first_name, " .
-                       "last_name = :last_name " .
-                       "WHERE id = :id" ;
-
+            } else {
+                echo "Updating author...<br>";  // Debugging 
+                $sql = "UPDATE authors SET first_name = :first_name, last_name = :last_name WHERE id = :id";
                 $params[":id"] = $this->id;
             }
+    
             $stmt = $conn->prepare($sql);
             $status = $stmt->execute($params);
-        
+    
             if (!$status) {
                 $error_info = $stmt->errorInfo();
                 $message = "SQLSTATE error code = ".$error_info[0]."; error message = ".$error_info[2];
                 throw new Exception("Database error executing database query: " . $message);
             }
-        
+    
             if ($stmt->rowCount() !== 1) {
                 throw new Exception("Failed to save author.");
             }
-        
+    
             if ($this->id === null) {
                 $this->id = $conn->lastInsertId();
             }
-        }
-        finally {
+    
+            echo "Save successful!<br>";  // Debugging
+    
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        } finally {
             if ($db !== null && $db->isOpen()) {
                 $db->close();
             }
         }
     }
+    
 
     public function delete() {
         $db = null;
@@ -133,38 +136,48 @@ class Author {
     }
 
     public static function findById($id) {
-        $author = null;
-
+        $author = null;  
+        
         try {
+            
             $db = new DB();
             $db->open();
             $conn = $db->getConnection();
-
+    
+            
             $sql = "SELECT * FROM authors WHERE id = :id";
-            $params = [
-                ":id" => $id
-            ];
+            $params = [":id" => $id];
             $stmt = $conn->prepare($sql);
             $status = $stmt->execute($params);
-
+    
             if (!$status) {
                 $error_info = $stmt->errorInfo();
-                $message = "SQLSTATE error code = ".$error_info[0]."; error message = ".$error_info[2];
+                $message = "SQLSTATE error code = " . $error_info[0] . "; error message = " . $error_info[2];
                 throw new Exception("Database error executing database query: " . $message);
             }
-
-            if ($stmt->rowCount() !== 0) {
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                $author = new Author($row);
+    
+            
+            if ($stmt->rowCount() === 0) {
+                return null;
             }
-        }
-        finally {
+    
+            
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $author = new Author($row);
+    
+        } catch (Exception $e) {
+            
+            echo "Error: " . $e->getMessage();
+            return null;
+        } finally {
+            
             if ($db !== null && $db->isOpen()) {
                 $db->close();
             }
         }
-
-        return $author;
+    
+        return $author;  
     }
+    
 }
 ?>

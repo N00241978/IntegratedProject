@@ -206,14 +206,12 @@ body {
 
 /* Large Story */
 
-.container .mainContent .largeStory {
-
-}
 
 .container .mainContent .largeStory img {
     object-fit: cover;
     max-width: 300px;
     max-height: 343px;
+    padding-right: 5px;
 }
 
 .container .mainContent .largeStory {
@@ -313,6 +311,7 @@ body {
     padding-top: 10px;
     color: gray;
     font-size: 12px;
+    margin-bottom: auto;
 }
 
 .container .mediumStories .mediumStory .content .text h4 {
